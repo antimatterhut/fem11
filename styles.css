@@ -21,10 +21,16 @@ body {
 
 .content {
     background-color: white;
-    width: 375px;
+    width: 980px;
     box-sizing: border-box;
     border-radius: 2rem;
     padding: 1.5rem;
+    display: grid;
+    grid-template-areas: 'bill explain' 'tip explain' 'nums explain';
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-row-gap: 32px;
+    grid-column-gap: 20px;
 }
 
 .bill-title {
@@ -68,7 +74,7 @@ body {
 }
 
 .bill {
-    margin-bottom: 2rem;
+    grid-area: bill;
 }
 
 .title {
@@ -81,6 +87,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    gap: 0.5rem;
     box-sizing: border-box;
     width: 100%;
     font-size: 1.3rem;
@@ -90,21 +97,20 @@ body {
     background-color: hsl(183, 100%, 15%);
     border-radius: 0.2rem;
     text-align: center;
-    margin-bottom: 0.5rem;
     color: white;
     padding: 0.5rem 0;
 }
 
-.r {
+/* .r {
     margin-left: 0.5rem;
 }
 
 .l {
     margin-right: 0.5rem;
-}
+} */
 
 .tip {
-    margin-bottom: 2rem;
+    grid-area: tip;
 }
 
 .people-title {
@@ -118,13 +124,14 @@ body {
 }
 
 .nums {
-    margin-bottom: 2rem;
+    grid-area: nums;
 }
 
 .amount-container {
     background-color: hsl(183, 100%, 15%);
     border-radius: 1rem;
     padding: 1.5rem;
+    grid-area: explain;
 }
 
 .amount-box {
@@ -135,8 +142,6 @@ body {
     color: white;
     font-size: 0.8rem;
 }
-
-
 
 .reset-button {
     width: 100%;
@@ -181,8 +186,6 @@ body {
     box-sizing: border-box;
     padding-right: 0.5rem;
     text-align: right;
-
-
 }
 
 .custom::placeholder {
@@ -215,4 +218,18 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .content {
+        width: 700px;
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        width: 375px;
+        grid-template-areas: 'bill' 'tip' 'nums' 'explain';
+        grid-template-columns: 1fr;
+    }
 }
