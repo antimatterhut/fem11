@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*font-family: "Space Mono", monospace;*/
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(185, 41%, 84%);
+    min-height: 100vh;
+}
+
+.content {
+    background-color: white;
+    width: 375px;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    padding: 1.5rem;
+}
+
+.bill-title {
+    color: hsl(183, 100%, 15%);
+    position: relative;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+
+.bill-input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 0.3rem;
+    text-align: right;
+    font-size: 1.3rem;
+    color: hsl(183, 100%, 15%);
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    caret-color: transparent;
+}
+
+.bill-input:focus {
+    border: 1.5px solid hsl(184, 14%, 56%);
+}
+
+.money {
+    position: absolute;
+    left: 1rem;
+    bottom: -2.7rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(184, 14%, 56%);
+}
+
+.bill {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 0.8rem;
+    color: hsl(184, 14%, 56%);
+    margin-bottom: 0.3rem;
+}
+
+.tip-options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.tip-button {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 0.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.r {
+    margin-left: 0.5rem;
+}
+
+.l {
+    margin-right: 0.5rem;
+}
+
+.tip {
+    margin-bottom: 2rem;
+}
+
+.people-title {
+    position: relative;
+}
+
+.person-container {
+    position: absolute;
+    bottom: -2.45rem;
+    left: 1rem;
+}
+
+.nums {
+    margin-bottom: 2rem;
+}
+
+.amount-container {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.amount-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 0.8rem;
+}
+
+
+
+.reset-button {
+    width: 100%;
+    background-color: hsl(172, 67%, 45%);
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    color: hsl(183, 100%, 15%);
+}
+
+.reset-button:hover {
+    cursor: pointer;
+    background-color: hsl(185, 41%, 84%);
+
+}
+
+.price {
+    color: hsl(172, 67%, 45%);
+    font-size: 1.6rem;
+}
+
+.nums-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message {
+    font-size: 0.8rem;
+    color: hsl(0, 100%, 63%);
+    margin-bottom: 0.3rem;
+    visibility: hidden;
+}
+
+.custom {
+    border: none;
+    padding: 0.5rem 0;
+    color: hsl(0, 0%, 100%);
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 0.5rem;
+    text-align: right;
+
+
+}
+
+.custom::placeholder {
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+
+.custom:focus {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    outline: 1.5px solid hsl(183, 100%, 15%);
+}
+
+.custom:focus::placeholder {
+    visibility: hidden;
+}
+
+.top-title {
+    color: hsl(183, 100%, 15%);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.8rem;
+}
+
+.op:hover {
+    background-color: hsl(172, 67%, 45%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
