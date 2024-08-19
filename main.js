@@ -26,10 +26,15 @@ let tipValue = 0;
 let numOfPersons = 1; //cannot be 0
 let tipPercent = 0;
 
-
+let tipPerPerson = 0;
+let payPerPerson = 0;
 
 //getting the inputs for the calculation
 const billNum = document.querySelector(".bill-num");
+
+//reset button
+
+const resetButton = document.querySelector(".reset-button");
 
 
 //Code for keeping the tip buttons their color
@@ -57,13 +62,11 @@ const chooseTipButton = (event) => {
 
     doCalc();
 
-
 };
 
+// code for getting the custom value option
 const customChoice = (event) => {
     text = custom.value;
-
-    // console.log(text);
 
     let result = text.replace(/%/, '');
 
@@ -81,18 +84,16 @@ allButtoms.forEach((element) => {
 
 custom.addEventListener("input", customChoice);
 
-//Code for zero error 
+//Code for zero error, with regards to the look changing
 
 const handleZeroError = (event) => {
-    console.log(numOfPeople.value);
     if (numOfPeople.value == "0") {
         errorMessage.style.visibility = "visible";
-        numOfPeople.style.border = "1.5px solid red";
+        numOfPeople.classList.add("error-border");
     }
     else {
         errorMessage.style.visibility = "hidden";
-        numOfPeople.style.outline = "none";
-        numOfPeople.style.border = "none";
+        numOfPeople.classList.remove("error-border");
     }
 
     doCalc();
@@ -112,39 +113,76 @@ const doCalc = (event) => {
     //get value of persons
 
     // append this function to other functions
-
-    billValue = Number(billNum.value);
-
-    numOfPersons = Number(numOfPeople.value);
-
-
-    let tipPerPerson = Number(((billValue * (tipPercent - 1)) / numOfPersons).toFixed(2));
-
-    console.log(tipPerPerson);
-
-    let payPerPerson = ((billValue / numOfPersons) + tipPerPerson).toFixed(2);
-
-    console.log(payPerPerson);
+    if (billNum.value != "") {
+        billValue = Number(billNum.value);
+    }
+    else {
+        billValue = 0;
+    }
 
 
-    tipAmount.textContent = tipPerPerson;
-
-    priceAmount.textContent = payPerPerson;
-
-
-
-
-
+    if (numOfPeople.value != "") {
+        numOfPersons = Number(numOfPeople.value);
+    }
+    else {
+        numOfPersons = 1;
+    }
 
 
+    let placeholder = tipPercent - 1;
+    if (placeholder < 0) {
+        placeholder = 0;
+    }
+
+    if (numOfPeople.value != 0) {
+        tipPerPerson = ((billValue * (placeholder)) / numOfPersons).toFixed(2);
+
+        let tipPerPersonNum = parseFloat(tipPerPerson);
+
+        payPerPerson = ((billValue / numOfPersons) + tipPerPersonNum).toFixed(2);
+
+        let payPerPersonNum = parseFloat(payPerPerson);
+
+        tipAmount.textContent = tipPerPerson;
+
+        priceAmount.textContent = payPerPerson;
+    }
+    else {
+        tipAmount.textContent = "0.00";
+        priceAmountAmount.textContent = "0.00";
+    }
 
 
 }
 
 
+billNum.addEventListener("input", doCalc);
+
 //code for reset button
 
+const reset = () => {
+    tipAmount.textContent = "0.00";
+    priceAmount.textContent = "0.00";
+    billValue = 0;
+    tipValue = 0;
+    numOfPersons = 1; //cannot be 0
+    tipPercent = 0;
+    tipPerPerson = 0;
+    payPerPerson = 0;
+    billNum.value = "";
+    numOfPeople.value = "";
+    custom.value = "";
+    handleZeroError();
+
+    allButtoms.forEach((element => {
+
+        if (!element.classList.contains("b6")) {
+            element.style.backgroundColor = "hsl(183, 100%, 15%)";
+        }
+    }))
+
+}
 
 
 
-
+resetButton.addEventListener("click", reset);

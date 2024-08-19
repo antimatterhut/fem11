@@ -54,7 +54,8 @@ body {
     caret-color: transparent;
 }
 
-.bill-input:focus {
+.bill-input:focus,
+.num-of-people:focus {
     border: 1.5px solid hsl(184, 14%, 56%);
 }
 
@@ -150,7 +151,6 @@ body {
 .reset-button:hover {
     cursor: pointer;
     background-color: hsl(185, 41%, 84%);
-
 }
 
 .price {
@@ -168,6 +168,14 @@ body {
     color: hsl(0, 100%, 63%);
     margin-bottom: 0.3rem;
     visibility: hidden;
+}
+
+.error-border {
+    border: 1.5px solid red;
+}
+
+.error-border:focus {
+    border: 1.5px solid red;
 }
 
 .custom {
@@ -200,6 +208,7 @@ body {
     visibility: hidden;
 }
 
+
 .top-title {
     color: hsl(183, 100%, 15%);
     font-size: 1.3rem;
@@ -209,10 +218,41 @@ body {
 
 .op:hover {
     background-color: hsl(172, 67%, 45%);
+    cursor: pointer;
+}
+
+.custom:focus:hover {
+    background-color: hsl(189, 41%, 97%);
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+@media (min-width: 920px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 920px;
+        padding: 2rem;
+        height: 481px;
+        box-sizing: border-box;
+        border-radius: 1.6rem;
+    }
+
+    .grid1 {
+        margin-right: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .grid2 {
+        margin-left: 1.5rem;
+    }
+
+    .amount-container {
+        height: 370px;
+    }
+
 }

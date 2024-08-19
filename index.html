@@ -27,82 +27,94 @@
 
     <div class="content">
 
+      <div class="grid1">
 
-      <div class="bill">
 
 
-        <div class="bill-title title">Bill <div class="money">$</div>
+        <div class="bill">
+
+
+          <div class="bill-title title">Bill <div class="money">$</div>
+          </div>
+          <div class="bill-input-container">
+            <input class="bill-input bill-num" type="number" pattern="/^-?\d+\.?\d*$/"
+              onKeyPress="if(this.value.length==20) return false;">
+
+
+          </div>
+
         </div>
-        <div class="bill-input-container">
-          <input class="bill-input bill-num" type="number" pattern="/^-?\d+\.?\d*$/"
-            onKeyPress="if(this.value.length==20) return false;">
+
+
+
+
+        <div class="tip">
+          <div class="tip-title title">Select Tip %</div>
+          <div class="tip-options-container">
+
+            <div class="tip-button l op b1">5%</div>
+            <div class="tip-button r op b2">10%</div>
+            <div class="tip-button l op b3">15%</div>
+            <div class="tip-button r op b4">25%</div>
+            <div class="tip-button l op b5">50%</div>
+            <div class="r"><input class="tip-button custom op b6" placeholder="Custom" type="number"
+                pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==8) return false;"></div>
+          </div>
 
 
         </div>
+
+        <div class="nums">
+
+          <div class="nums-top">
+            <div class="people-title title"> Number of People <div class="person-container"><img
+                  src="images/icon-person.svg" alt=""></div>
+            </div>
+
+            <div class="error-message">Can't be zero</div>
+
+          </div>
+          <div class="nums-input-container"><input class="bill-input num-of-people" type="number"
+              pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==20) return false;"></div>
+
+
+
+
+        </div>
+
+
 
       </div>
 
 
+      <div class="grid2">
 
+        <div class="amount-container">
 
-      <div class="tip">
-        <div class="tip-title title">Select Tip %</div>
-        <div class="tip-options-container">
+          <div class="amount-box">
 
-          <div class="tip-button l op b1">5%</div>
-          <div class="tip-button r op b2">10%</div>
-          <div class="tip-button l op b3">15%</div>
-          <div class="tip-button r op b4">25%</div>
-          <div class="tip-button l op b5">50%</div>
-          <div class="r"><input class="tip-button custom op b6" placeholder="Custom" type="number"
-              pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==8) return false;"></div>
-        </div>
+            <div class="amount-text">
+              <div class="amount-text-top">Tip Amount</div>
+              <div class="amount-text-bottom">/ person</div>
+            </div>
 
+            <div class="price ">$ <span class="tip-amount">0.00</span></div>
 
-      </div>
+          </div>
+          <div class="amount-box">
+            <div class="amount-text">
+              <div class="amount-text-top">Total</div>
+              <div class="amount-text-bottom">/ person</div>
+            </div>
 
-      <div class="nums">
-
-        <div class="nums-top">
-          <div class="people-title title"> Number of People <div class="person-container"><img
-                src="images/icon-person.svg" alt=""></div>
+            <div class="price ">$ <span class="price-amount">0.00</span></div>
           </div>
 
-          <div class="error-message">Can't be zero</div>
+
+          <div class="reset-button"> RESET</div>
+
 
         </div>
-        <div class="nums-input-container"><input class="bill-input num-of-people" type="number"
-            pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==20) return false;"></div>
-
-
-
-
-      </div>
-
-      <div class="amount-container">
-
-        <div class="amount-box">
-
-          <div class="amount-text">
-            <div class="amount-text-top">Tip Amount</div>
-            <div class="amount-text-bottom">/ person</div>
-          </div>
-
-          <div class="price ">$ <span class="tip-amount">0.00</span></div>
-
-        </div>
-        <div class="amount-box">
-          <div class="amount-text">
-            <div class="amount-text-top">Total</div>
-            <div class="amount-text-bottom">/ person</div>
-          </div>
-
-          <div class="price ">$ <span class="price-amount">0.00</span></div>
-        </div>
-
-
-        <div class="reset-button"> RESET</div>
-
 
       </div>
 
