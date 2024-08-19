@@ -128,12 +128,14 @@ const doCalc = (event) => {
         numOfPersons = 1;
     }
 
-
+    //we get weird negative numbers as default if this isnt here
     let placeholder = tipPercent - 1;
     if (placeholder < 0) {
         placeholder = 0;
     }
 
+
+    //the calculation and making the textContent that
     if (numOfPeople.value != 0) {
         tipPerPerson = ((billValue * (placeholder)) / numOfPersons).toFixed(2);
 
@@ -149,7 +151,7 @@ const doCalc = (event) => {
     }
     else {
         tipAmount.textContent = "0.00";
-        priceAmountAmount.textContent = "0.00";
+        priceAmount.textContent = "0.00";
     }
 
 
@@ -161,6 +163,7 @@ billNum.addEventListener("input", doCalc);
 //code for reset button
 
 const reset = () => {
+    //set everything back to default
     tipAmount.textContent = "0.00";
     priceAmount.textContent = "0.00";
     billValue = 0;
@@ -172,8 +175,10 @@ const reset = () => {
     billNum.value = "";
     numOfPeople.value = "";
     custom.value = "";
+    //gets rid of error related stuff
     handleZeroError();
 
+    //reset all the background colors for the buttons
     allButtoms.forEach((element => {
 
         if (!element.classList.contains("b6")) {

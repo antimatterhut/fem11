@@ -38,7 +38,7 @@ body {
 }
 
 
-.bill-input {
+.user-input {
     height: 40px;
     width: 100%;
     border: none;
@@ -54,7 +54,7 @@ body {
     caret-color: transparent;
 }
 
-.bill-input:focus,
+.user-input:focus,
 .num-of-people:focus {
     border: 1.5px solid hsl(184, 14%, 56%);
 }
@@ -143,7 +143,7 @@ body {
     width: 100%;
     background-color: hsl(172, 67%, 45%);
     text-align: center;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     padding: 0.5rem 0;
     color: hsl(183, 100%, 15%);
 }
@@ -255,4 +255,72 @@ input::-webkit-inner-spin-button {
         height: 370px;
     }
 
+    .title {
+        font-size: 1rem;
+    }
+
+    .user-input {
+        font-size: 1.5rem;
+        height: 50px;
+    }
+
+    .tip-options-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+        row-gap: 0.5rem;
+    }
+
+    .r {
+        margin-left: 0rem;
+    }
+
+    .l {
+        margin-right: 0rem;
+    }
+
+    .tip-title {
+        margin-bottom: 1rem;
+    }
+
+    .person-container {
+        bottom: -2.7rem;
+    }
+
+    .money {
+        bottom: -2.9rem;
+    }
+
+    .bill {
+        margin-bottom: 2.5rem;
+    }
+
+    .reset-button {
+        margin-top: 8rem;
+
+    }
+
+    .amount-container {
+        box-sizing: border-box;
+        padding: 2.5rem;
+        height: max-content;
+    }
+
+    .amount-text-bottom {
+        font-size: 0.7rem;
+    }
+
+    .price {
+        font-size: 3rem;
+    }
+
+    .reset-button {
+        padding: 0.7rem 0;
+        font-size: 1.3rem;
+    }
+
+    .top-title {
+        margin-bottom: 3rem;
+
+    }
 }
