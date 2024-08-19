@@ -33,8 +33,10 @@ let payPerPerson = 0;
 const billNum = document.querySelector(".bill-num");
 
 //reset button
-
 const resetButton = document.querySelector(".reset-button");
+
+//all user inputs
+const userInput = document.querySelectorAll(".user-input");
 
 
 //Code for keeping the tip buttons their color
@@ -191,3 +193,16 @@ const reset = () => {
 
 
 resetButton.addEventListener("click", reset);
+
+//code to prevent negative number inputs on the bill or people(not allowing user to enter a negative sign)
+
+
+const preventNegative = (e) => {
+    if (e.key == '-') {
+        e.preventDefault();
+    }
+}
+
+userInput.forEach((element => {
+    element.addEventListener("keydown", preventNegative);
+}))
